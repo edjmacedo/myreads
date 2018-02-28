@@ -28,9 +28,9 @@ class BookList extends Component {
   }
 
   render() {
-    const { books } = this.props
+    const { books, setNewShelfState } = this.props
     const { shelf } = this.state
-    
+
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -41,6 +41,7 @@ class BookList extends Component {
             <CurrentlyShelf
               bookList={this.setCurrentlyShelf(books, section.name)}
               sectionTitle={section.displayName}
+              setNewShelfState={setNewShelfState}
               key={id}
             />
           ))

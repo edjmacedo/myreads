@@ -16,6 +16,14 @@ class BooksApp extends React.Component {
     })
   }
 
+  setNewShelfState = (bookUpdate, newShelf) => {
+    BooksAPI.update(bookUpdate, newShelf).then(result => {
+      BooksAPI.getAll().then((booksList) => {
+        this.setState({ booksList })
+      })
+    })
+  }
+
   render() {
     const { booksList } = this.state
     return (
@@ -23,11 +31,13 @@ class BooksApp extends React.Component {
         <Route exact path="/" render={() => (
           <BookList
             books={booksList}
+            setNewShelfState={this.setNewShelfState.bind(this)}
           />
         )} />
         <Route path="/search" render={() => (
           <SearchBooks
             books={booksList}
+            setNewShelfState={this.setNewShelfState.bind(this)}
            />
         )} />
       </div>

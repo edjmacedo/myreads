@@ -4,7 +4,7 @@ import Book from './Book'
 class CurrentlyShelf extends Component {
 
   render() {
-    const { bookList, sectionTitle } = this.props
+    const { bookList, sectionTitle, setNewShelfState } = this.props
     return (
       <div className="list-books-content">
         <div>
@@ -18,6 +18,7 @@ class CurrentlyShelf extends Component {
                     <Book
                       key={book.id}
                       book={book}
+                      setNewShelfState={setNewShelfState}
                     />
                   </li>
                 ))
