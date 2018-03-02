@@ -37,6 +37,8 @@ class SearchBooks extends Component {
           this.setState({ booksListSearched: [] })
         }
       })
+    } else {
+      this.setState({ booksListSearched: [] })
     }
   }
 
