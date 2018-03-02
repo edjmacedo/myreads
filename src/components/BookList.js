@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import escapeRegExp from 'escape-string-regexp'
+import PropTypes from 'prop-types'
 import CurrentlyShelf from './CurrentlyShelf'
 
 class BookList extends Component {
+
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    setNewShelfState: PropTypes.func.isRequired
+  }
 
   state = {
     shelf: [

@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Book extends Component {
+
+  static propTypes = {
+    book: PropTypes.array.isRequired,
+    setNewShelfState: PropTypes.func.isRequired
+  }
 
   state = {
     title: !this.props.book.title ? ["Unknown"] : this.props.book.title,

@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import Book from './Book'
+import PropTypes from 'prop-types'
 
 class CurrentlyShelf extends Component {
+
+  static propTypes = {
+    bookList: PropTypes.array.isRequired,
+    sectionTitle: PropTypes.string.isRequired,
+    setNewShelfState: PropTypes.func.isRequired
+  }
 
   render() {
     const { bookList, sectionTitle, setNewShelfState } = this.props
